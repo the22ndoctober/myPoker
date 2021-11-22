@@ -18,8 +18,6 @@ function App() {
     setEnemyCards(cardsDrop(2))
     setRotateInDownRight(styled.div`animation: 0.8s ${keyframes`${rotateInDownRight}`} 1`)
 
-    console.log(myCards)
-    console.log(MyCardStore.pickedCards)
   }
 
   
