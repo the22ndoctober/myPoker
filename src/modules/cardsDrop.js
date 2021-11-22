@@ -9,7 +9,7 @@ export default function cardsDrop(cardsAmount){
   let cards = []
 
   for(let i = 0; i <= cardsAmount-1; i++){
-    let myCardKey = randomCard(MyCardStore.unpickedCards.length)
+    let myCardKey = randomCard(MyCardStore.unpickedCards.length-2)
     
     cards.push(MyCardStore.giveCard(myCardKey))
   }

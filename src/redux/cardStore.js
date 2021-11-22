@@ -1,15 +1,16 @@
 import React from "react"
 
 class PokerCard{
-    constructor(value,suit,inDeck){
+    constructor(value,suit){
         this.value = value
         this.suit = suit
+        this.imgPath = `./content/${value}${suit}.png`
     }
     
 
 }
 
-const suit = ['club', 'spade', 'diamonds', 'heart']
+const suit = ['Club', 'Spade', 'Diamonds', 'Heart']
 
 const value = ['Ace', 'King', 'Queen', 'Jack', 'Ten',
                'Nine', 'Eight', 'Seven', 'Six', 'Five',

@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+    .App {
+      margin-top: 10px;
+
+      .handHolder{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 5px;
+        border: 1px solid gray;
+        width: 300px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+
+        .cardImage{
+            width: 80px;
+            height: 133px;           
+        }
+        .myCard-leftFlip {
+            position: absolute;
+            transform: rotate(8deg);
+            left: 45%;
+        }
+
+        .myCard-rightFlip{
+            position: absolute;
+            transform: rotate(-8deg);
+            right: 45%;
+        }
+        
+        
+      }
+    }
+  }
