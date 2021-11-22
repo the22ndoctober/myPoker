@@ -4,11 +4,8 @@ class PokerCard{
     constructor(value,suit,inDeck){
         this.value = value
         this.suit = suit
-        this.inDeck = inDeck
     }
-    changeInDeckState(inDeck) {
-        this.inDeck = inDeck
-    }
+    
 
 }
 
@@ -18,33 +15,37 @@ const value = ['Ace', 'King', 'Queen', 'Jack', 'Ten',
                'Nine', 'Eight', 'Seven', 'Six', 'Five',
                'Four', 'Three', 'Two'
 ]
-let allCards = [
+let allCards = []
 
-]
+let unpickedCards = allCards
+
+let pickedCards = []
+
 suit.forEach(suit=>{
     value.forEach(value=>{
-        allCards.push(new PokerCard(value, suit, false)) 
+        allCards.push(new PokerCard(value, suit)) 
     })
 })
 
 class CardStore{
-    constructor(initialState){
-        this.state = initialState
+    constructor(initialAllCards, initialUnpickedCards, initialPickedCards){
+        this.allCards = initialAllCards
+        this.unpickedCards = initialUnpickedCards
+        this.pickedCards = initialPickedCards
     }
 
-    setCardToDeck(cardToDeck){
-        this.state.filter(card=> card.value === cardToDeck.value).find(card=> card.suit === cardToDeck.suit).inDeck = true
-        return (
-            <div className='card'>
-                {cardToDeck.value}
-                <br/>
-                {cardToDeck.suit}
-            </div>
-        )
+    giveCard(card){
+
+        let currentCard = this.unpickedCards[card]
+
+        this.unpickedCards.splice(card, 1)
+        this.pickedCards.push(currentCard)
+
+        return currentCard
         
     }
 }
 
-let MyCardStore = new CardStore(allCards)
+let MyCardStore = new CardStore(allCards, unpickedCards, pickedCards)
 
 export default MyCardStore

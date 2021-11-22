@@ -3,3 +3,8 @@
   padding: 0;
   
 }
+
+.handHolder{
+  display: flex;
+  flex-direction: row;
+}
