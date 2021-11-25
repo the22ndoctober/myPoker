@@ -4,14 +4,16 @@ import {React,useState} from 'react';
 import { rotateInDownRight } from 'react-animations';
 import styled, { keyframes } from 'styled-components';
 import CombinationInfo from '../redux/combinationInfo';
+import MyCardStore from '../redux/cardStore';
 
 
 
 export default function HandsGenerator() {
-    let [myCards,setMyCards] = useState([{suit: 'heart', value:{name: 'Ace', worth: 13}},{suit: 'spade', value:{name: 'Ace', worth: 13}}])
+    let [myCards,setMyCards] = useState([])
     let [enemyCards,setEnemyCards] = useState([])
     let [RotateInDownRight,setRotateInDownRight] = useState()
-  
+    
+    console.log(MyCardStore)
     const run = ()=>{
     
     setMyCards(cardsDrop(2))
