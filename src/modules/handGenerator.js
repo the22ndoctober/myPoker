@@ -14,6 +14,7 @@ export default function HandsGenerator() {
     let [RotateInDownRight,setRotateInDownRight] = useState()
     
     console.log(MyCardStore)
+
     const run = ()=>{
     
     setMyCards(cardsDrop(2))
@@ -26,26 +27,22 @@ export default function HandsGenerator() {
             <button onClick={run}>Give Cards</button>
             <div className='handHolder'>
                 <CombinationInfo cards={myCards}/>
+                {console.log(myCards)}
                 {myCards.map((card,id)=>{
                 let myclass
                 id%2 != 0 ? myclass ={flip:'card__image-leftFlip', text:'card__text-leftAlign'} : myclass = {flip:'card__image-rightFlip', text:'card__text-rightAlign'}
                     return(
                     <div className='card'>
                         <div className='card__Container'>
-                        <div className={myclass.flip}>
-                            <RotateInDownRight>
-                            <div className='card__Image'>
-                                <img srcSet={card.imgPath} alt=""/>
-                            </div>                 
-                            </RotateInDownRight>                                                
+                            <div className={myclass.flip}>
+                                <RotateInDownRight>
+                                    <div className='card__Image'>
+                                        <img srcSet={card.imgPath} alt={card.value.name + card.suit} title={card.value.name + card.suit}/>
+                                    </div>                 
+                                </RotateInDownRight>                                                
+                            </div>
                         </div>
-                        </div>
-                        <div className={myclass.text}>
-                        <br/>
-                        {card.value.name}
-                        <br/>
-                        {card.suit}
-                        </div>
+                        
                     </div>
                     )
                 })
@@ -54,26 +51,23 @@ export default function HandsGenerator() {
             </div>
 
             <div className='handHolder'>
+
+                <CombinationInfo cards={enemyCards}/>
                 {enemyCards.map((card,id)=>{
                     let myclass = ''
                     id%2 != 0 ? myclass ={flip:'card__image-leftFlip', text:'card__text-leftAlign'} : myclass = {flip:'card__image-rightFlip', text:'card__text-rightAlign'}
                     return(
                         <div className='card'>
-                        <div className='card__Container'>
-                            <div className={myclass.flip}>
-                            <RotateInDownRight>
-                                <div className='card__Image'>
-                                <img srcSet={card.imgPath} alt=""/>
-                                </div>                 
-                            </RotateInDownRight>                                                
-                            </div>
-                        </div>                                                
-                        <div className={myclass.text}>
-                            <br/>
-                            {card.value.name}
-                            <br/>
-                            {card.suit}
-                        </div>
+                            <div className='card__Container'>
+                                <div className={myclass.flip}>
+                                <RotateInDownRight>
+                                    <div className='card__Image'>
+                                    <img srcSet={card.imgPath} alt={card.value.name + card.suit} title={card.value.name + card.suit}/>
+                                    </div>                 
+                                </RotateInDownRight>                                                
+                                </div>
+                            </div>                                                
+                        
                         </div>
                         )
                     })

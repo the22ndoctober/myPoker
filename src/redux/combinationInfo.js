@@ -4,9 +4,14 @@ import React from "react";
 export default function CombinationInfo(props) {
     const COMBINATIONS = {pair:'pair', twoPairs:'two pairs', set:'set', fullHouse: 'full-house', square: 'square', street: 'street', flush: 'flush'}
     console.log(props.cards)
+
     if(props.cards.length > 0){
-        let maxWorth = Math.max.apply(null, props.cards)
-        let maxCard = props.cards.find(card=> card.value.worth = maxWorth)
+
+       
+        
+        let maxCard = props.cards.find(card=> card.value.worth === Math.max.apply(null, props.cards.map(card=>{return card.value.worth})))
+        console.log(maxCard)
+        
         let pairsCheck = props.cards.map(card=>{
             return card.value.name
         }).reduce((val1, val2)=>{
@@ -26,7 +31,7 @@ export default function CombinationInfo(props) {
         else{
             return(
                 <div>
-                    {`You have a ${maxCard.value.name} high`}
+                    {`You have ${maxCard.value.name} high`}
                 </div>
             )
         }
