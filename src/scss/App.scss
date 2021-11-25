@@ -12,24 +12,47 @@
         padding: 5px;
         border: 1px solid gray;
         width: 300px;
+        height: 200px;
         margin: 0 auto;
         text-align: center;
         position: relative;
 
-        .cardImage{
+        .card{
+          position: relative;
+          width: 100%;
+        }
+
+        .card__Container{
+          position: relative;
+          width: 100%;
+          height: 150px;
+        }
+
+        .card__image{
             width: 80px;
             height: 133px;           
         }
-        .myCard-leftFlip {
+        .card__text-leftAlign{
+          text-align: left;
+          width: 100%;
+        }
+        .card__text-rightAlign{
+          text-align: right;
+          width: 100%;
+        }
+        
+        .card__image-leftFlip {
             position: absolute;
             transform: rotate(8deg);
-            left: 45%;
+            top: 20px;
+            left: -15px;
         }
 
-        .myCard-rightFlip{
+        .card__image-rightFlip{
             position: absolute;
             transform: rotate(-8deg);
-            right: 45%;
+            top: 20px;
+            right: -15px;
         }
         
         

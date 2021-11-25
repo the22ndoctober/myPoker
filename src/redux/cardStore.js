@@ -4,7 +4,7 @@ class PokerCard{
     constructor(value,suit){
         this.value = value
         this.suit = suit
-        this.imgPath = `./content/${value}${suit}.png`
+        this.imgPath = `./content/${value.name}${suit}.png`
     }
     
 
@@ -12,9 +12,9 @@ class PokerCard{
 
 const suit = ['Club', 'Spade', 'Diamonds', 'Heart']
 
-const value = ['Ace', 'King', 'Queen', 'Jack', 'Ten',
-               'Nine', 'Eight', 'Seven', 'Six', 'Five',
-               'Four', 'Three', 'Two'
+const value = [{name: 'Ace', worth: 13}, {name: 'King', worth: 12}, {name: 'Queen', worth:11}, {name: 'Jack', worth: 10}, {name: 'Ten', worth: 9},
+               {name: 'Nine', worth: 8}, {name: 'Eight', worth:7 }, {name: 'Seven', worth:6}, {name:'Six', worth: 5}, {name:'Five', worth: 4},
+               {name:'Four', worth: 3}, {name:'Three', worth: 2}, {name:'Two', worth: 1}
 ]
 let allCards = []
 
